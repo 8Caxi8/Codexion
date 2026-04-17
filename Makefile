@@ -1,6 +1,8 @@
 NAME = codexion
 
-SRCS =	srcs/codexion.c srcs/err.c srcs/parser.c
+VERSION = 1.1
+
+SRCS =	srcs/codexion.c srcs/err.c srcs/parser.c srcs/simulation.c srcs/coders.c
 
 OBJS = $(SRCS:.c=.o)
 
