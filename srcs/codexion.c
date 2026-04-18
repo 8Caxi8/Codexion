@@ -6,7 +6,7 @@
 /*   By: dansimoe <dansimoe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/17 19:04:36 by dansimoe          #+#    #+#             */
-/*   Updated: 2026/04/17 20:16:21 by dansimoe         ###   ########.fr       */
+/*   Updated: 2026/04/18 15:18:04 by dansimoe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int	main(int ac, char **av)
 			return (err_message(1));
 		print_parameters(parameters);
 		start_simulation(parameters);
-		free_p(parameters);
 	}
 	else
 		return (err_message(0));

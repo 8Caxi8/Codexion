@@ -6,7 +6,7 @@
 /*   By: dansimoe <dansimoe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/17 19:04:23 by dansimoe          #+#    #+#             */
-/*   Updated: 2026/04/17 20:39:59 by dansimoe         ###   ########.fr       */
+/*   Updated: 2026/04/18 15:28:27 by dansimoe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,21 @@ int	err_message(int i)
 		printf("<number_of_compiles_required> <dongle_cooldown> <scheduler>\n");
 	}
 	else if (i == 1)
-		printf("[ERROR]: Wrong Format!");
+		printf("[ERROR]: Wrong Format!\n");
 	else if (i == 2)
-		printf("[ERROR]: Failed to create thread!");
+		printf("[ERROR]: Failed to create thread!\n");
 	else if (i == 3)
-		printf("[ERROR]: Failed to join thread!");
+		printf("[ERROR]: Failed to join thread!\n");
+	else if (i == 4)
+		printf("[ERROR]: Coders memory allocation failed!\n");
 	return (1);
 }
 
 void	free_p(t_parameters *p)
 {
-	free(p->coders);
-	free(p->dongles);
+	if (p->coders)
+		free(p->coders);
+	if (p->dongles)
+		(delete_dongles(p), free(p->dongles));
 	free(p);
 }

@@ -6,7 +6,7 @@
 /*   By: dansimoe <dansimoe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/17 19:04:44 by dansimoe          #+#    #+#             */
-/*   Updated: 2026/04/17 20:48:23 by dansimoe         ###   ########.fr       */
+/*   Updated: 2026/04/18 14:28:38 by dansimoe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ t_parameters	*set_parameters(t_parameters *p, int *list, char *scheduler)
 {
 	p = malloc(sizeof(t_parameters));
 	if (!p)
-		return (free(list), p);
+		return (free(list), NULL);
 	p->no_coders = list[0];
 	p->burnout = list[1];
 	p->compile = list[2];
