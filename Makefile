@@ -2,7 +2,16 @@ NAME = codexion
 
 VERSION = 1.1
 
-SRCS =	srcs/codexion.c srcs/err.c srcs/parser.c srcs/simulation.c srcs/coders.c srcs/codexion_helper.c srcs/coders_actions.c
+SRCS =	srcs/coders_actions.c \
+		srcs/coders.c \
+		srcs/codexion_helper.c \
+		srcs/codexion.c \
+		srcs/err.c \
+		srcs/initiators.c \
+		srcs/memory.c \
+		srcs/parser.c \
+		srcs/routines.c \
+		srcs/simulation.c \
 
 OBJS = $(SRCS:.c=.o)
 

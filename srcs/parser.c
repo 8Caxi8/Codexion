@@ -6,7 +6,7 @@
 /*   By: dansimoe <dansimoe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/17 19:04:44 by dansimoe          #+#    #+#             */
-/*   Updated: 2026/04/20 10:51:35 by dansimoe         ###   ########.fr       */
+/*   Updated: 2026/04/20 12:45:53 by dansimoe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,5 @@ t_parameters	*parser(char **av)
 	}
 	if (strcmp(av[8], "fifo") && strcmp(av[8], "edf"))
 		return (free(list_parameters), NULL);
-	return (set_parameters(parameters, list_parameters, av[8]));
+	return (alloc_parameters(parameters, list_parameters, av[8]));
 }

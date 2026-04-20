@@ -6,7 +6,7 @@
 /*   By: dansimoe <dansimoe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/17 19:04:23 by dansimoe          #+#    #+#             */
-/*   Updated: 2026/04/20 10:12:44 by dansimoe         ###   ########.fr       */
+/*   Updated: 2026/04/20 12:42:12 by dansimoe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,4 @@ int	err_message(int i)
 	else if (i == 4)
 		printf("[ERROR]: Coders memory allocation failed!\n");
 	return (1);
-}
-
-void	free_p(t_parameters *p)
-{
-	if (p->coders)
-		free(p->coders);
-	if (p->dongles)
-		(delete_dongles(p), free(p->dongles));
-	if (p->sig_dongles)
-		(delete_dongles(p), free(p->dongles));
-	free(p);
 }
