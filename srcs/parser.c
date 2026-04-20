@@ -6,7 +6,7 @@
 /*   By: dansimoe <dansimoe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/17 19:04:44 by dansimoe          #+#    #+#             */
-/*   Updated: 2026/04/18 14:28:38 by dansimoe         ###   ########.fr       */
+/*   Updated: 2026/04/20 10:51:35 by dansimoe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,28 +35,6 @@ int	get_parameters(char *av)
 		return (-1);
 	else
 		return (atoi(av));
-}
-
-t_parameters	*set_parameters(t_parameters *p, int *list, char *scheduler)
-{
-	p = malloc(sizeof(t_parameters));
-	if (!p)
-		return (free(list), NULL);
-	p->no_coders = list[0];
-	p->burnout = list[1];
-	p->compile = list[2];
-	p->debug = list[3];
-	p->refactor = list[4];
-	p->compiles_required = list[5];
-	p->dongle_cooldown = list[6];
-	p->scheduler = scheduler;
-	p->coders = malloc(p->no_coders * sizeof(pthread_t));
-	if (!p->coders)
-		return (free(list), NULL);
-	p->dongles = malloc(p->no_coders * sizeof(pthread_mutex_t));
-	if (!p->dongles)
-		return (free(list), free(p->coders), NULL);
-	return (free(list), p);
 }
 
 t_parameters	*parser(char **av)

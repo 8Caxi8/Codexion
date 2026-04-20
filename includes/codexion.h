@@ -6,7 +6,7 @@
 /*   By: dansimoe <dansimoe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/17 19:09:52 by dansimoe          #+#    #+#             */
-/*   Updated: 2026/04/18 17:05:04 by dansimoe         ###   ########.fr       */
+/*   Updated: 2026/04/20 11:17:06 by dansimoe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,10 @@
 typedef struct s_parameters
 {
 	pthread_t		*coders;
-	pthread_mutex_t	*dongles;
+	int				*dongle_state;
+	pthread_mutex_t	table;
+	pthread_cond_t	cond_table;
+	pthread_mutex_t	logging;
 	int				no_coders;
 	int				burnout;
 	int				compile;
@@ -31,7 +34,7 @@ typedef struct s_parameters
 	int				refactor;
 	int				compiles_required;
 	int				dongle_cooldown;
-	char			*scheduler;
+	const char		*scheduler;
 }					t_parameters;
 
 typedef struct s_coder
@@ -54,5 +57,8 @@ void			take_dongle(pthread_mutex_t dongle, int coder_id);
 void			compile(t_coder *coders, int coder_id);
 void			debug(t_coder *coders, int coder_id);
 void			refactor(t_coder *coders, int coder_id);
+long			get_time_ms(struct timeval start);
+void			init_parameters(t_parameters *p, int *list, const char *scheduler);
+void			init_dongle_state(t_parameters *p);
 
 #endif

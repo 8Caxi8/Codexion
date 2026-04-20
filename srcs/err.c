@@ -6,7 +6,7 @@
 /*   By: dansimoe <dansimoe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/17 19:04:23 by dansimoe          #+#    #+#             */
-/*   Updated: 2026/04/18 15:28:27 by dansimoe         ###   ########.fr       */
+/*   Updated: 2026/04/20 10:12:44 by dansimoe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ void	free_p(t_parameters *p)
 	if (p->coders)
 		free(p->coders);
 	if (p->dongles)
+		(delete_dongles(p), free(p->dongles));
+	if (p->sig_dongles)
 		(delete_dongles(p), free(p->dongles));
 	free(p);
 }
